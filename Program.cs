@@ -87,24 +87,3 @@ Console.WriteLine(" ");
 */
 
 
-/*
-int Max(int a, int b)
-{
-    int s = 0;
-    s = a + b;
-    return s;
-}
-*/
-
-
-Console.WriteLine("qOP");
-
-int[] myArray = new int[5];
-Random rand = new Random();
-
-for (int x = 0; x < myArray.Length; x++)
-{
-    myArray[x] = rand.Next(20);
-    Console.WriteLine("Значение элемента массива " + x + " = " + myArray[x]);
-}
-     }
