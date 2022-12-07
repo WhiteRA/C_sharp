@@ -93,13 +93,9 @@ Console.WriteLine(" ");
 
 
 
-int RandomNumbers()
-{
-    int RandomNumbers = new Random().Next(10, 999);
-    return RandomNumbers;
-}
 
-int i = RandomNumbers();
+
+int i = library.RandomNumbers();
 Console.WriteLine(i);
 
 
