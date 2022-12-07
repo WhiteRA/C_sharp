@@ -94,8 +94,7 @@ Console.WriteLine(" ");
 
 
 
-
-int i = library.RandomNumbers();
+int i = ConsoleApp.Library.RandomNumbers();
 Console.WriteLine(i);
 
 

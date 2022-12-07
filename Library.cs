@@ -1,12 +1,15 @@
-﻿public static class library
+﻿namespace ConsoleApp
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    public static int RandomNumbers()
+    public static class Library
     {
-        int RandomNumbers = new Random().Next(10, 999);
-        return RandomNumbers;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static int RandomNumbers()
+        {
+            int RandomNumbers = new Random().Next(10, 999);
+            return RandomNumbers;
+        }
     }
 }
