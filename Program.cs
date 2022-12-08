@@ -89,13 +89,17 @@ Console.WriteLine(" ");
 
 
 //Второе ДЗ
+/*
 //Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+using System.Xml.Linq;
 
 int i = ConsoleApp.Library.RandomNumbers_3();  // Тут генерируем число
 Console.WriteLine(i + " - Случайное число"); // Выводим получившиеся число
 i = (i / 10) % 10;                           // Берём число, делим его на 10. К примеру 123, делим на 10. Получается 12,3. Но так-как у нас INT, в топеременную i падает 12. Азатем получаем остаток от деления на 10 числа 12 = 2. Это и будет вторая цифра числа 123.
 Console.WriteLine(i + " - Вторая цифра");    // Выводим ответ.
 Console.WriteLine();
+
 
 //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
@@ -105,33 +109,49 @@ o = o % 10;
 Console.WriteLine(o + " - Третья цифра");    // Выводим ответ.
 Console.WriteLine();
 
+*/
 //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
+Console.WriteLine("Проверка дня недели на выходной день.");
+Console.WriteLine("Укажите номер дня недели");
+string weekday = Console.ReadLine();
+int d = Convert.ToInt32(weekday);
+
+if (d <= 7)
+{
+    switch (d)  // Я решил использувать оператор свитч потому, что он показался мне очень подходящим для этой задачи.
+    {
+        case 1:
+            Console.WriteLine("Понедельник");
+            break;
+        case 2:
+            Console.WriteLine("Вторник");
+            break;
+        case 3:
+            Console.WriteLine("ЭТО СРЕДА, МОИ ПРОГРАММИСТСКИЕ ЧУВАКИ");
+            break;
+        case 4:
+            Console.WriteLine("Четверг");
+            break;
+        case 5:
+            Console.WriteLine("Пятница");
+            break;
+        case 6:
+            Console.WriteLine("Суббота, обычно выходной");
+            break;
+        case 7:
+            Console.WriteLine("Воскресенье, обычно выходной");
+            break;
+    }
+}
+else 
+{
+    Console.WriteLine("Такого номера дня недели не существует");
+}
+
+
+/*
 int weekday = ConsoleApp.Library.RandomNumbers_1();
 Console.WriteLine(weekday + " - Номер дня недели");
 
-switch (weekday)
-{
-    case 1:
-        Console.WriteLine(weekday + " - Понедельник");
-        break;
-    case 2:
-        Console.WriteLine(weekday + " - Вторник");
-        break;
-
-    case 3:
-        Console.WriteLine(weekday + " - ЭТО СРЕДА, МОИ ЧУВАКИ");
-        break;
-    case 4:
-        Console.WriteLine(weekday + " - Четверг");
-        break;
-    case 5:
-        Console.WriteLine(weekday + " - Пятница");
-        break;
-    case 6:
-        Console.WriteLine(weekday + " - Суббота, обычно выходной");
-        break;
-    case 7:
-        Console.WriteLine(weekday + " - Воскресенье, обычно выходной");
-        break;
-}
+*/
