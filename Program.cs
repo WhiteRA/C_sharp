@@ -1,4 +1,5 @@
 ﻿
+using System;
 using static ConsoleApp.Library;
 
 
@@ -208,3 +209,21 @@ for (int m = 1; m <= p; m++)
     Console.WriteLine(u);
 }
 */
+
+//Четвёртове ДЗ
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+double number = RandomNumbers_1();
+double degree = RandomNumbers_1();
+double result = 1;
+Console.WriteLine(number);
+Console.WriteLine(degree);
+
+
+for (int i = 0; i < degree; i++)
+{
+
+    result *= number;
+    Console.WriteLine(result);
+}
+Console.Write($"{number} в степени {degree} = {result}");
