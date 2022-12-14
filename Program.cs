@@ -208,22 +208,37 @@ for (int m = 1; m <= p; m++)
     k = i * i * i;
     Console.WriteLine(u);
 }
-*/
+
 
 //Четвёртове ДЗ
 //Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-double number = RandomNumbers_1();
-double degree = RandomNumbers_1();
-double result = 1;
-Console.WriteLine(number);
-Console.WriteLine(degree);
-
-
+int number = RandomNumbers_1();
+int degree = RandomNumbers_1();
+int result = 1;
 for (int i = 0; i < degree; i++)
 {
-
     result *= number;
     Console.WriteLine(result);
 }
 Console.Write($"{number} в степени {degree} = {result}");
+
+
+//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+int a = RandomNumbers_3();
+string b = a.ToString();
+int N = b.Length;
+int p = 1;
+int M = 0;
+Console.WriteLine(a);
+
+for (int i = 1; i <= N; i++)
+{
+    M += (a / p) % 10;
+    p *= 10;
+    Console.Write($"{M} ");
+}
+*/
+
+//Задача 29: Напишите программу, которая задаёт массив из N элементов (из диапазона [0-14] ) и выводит на экран десятичное представление числа, записанного в СС по основанию 15
