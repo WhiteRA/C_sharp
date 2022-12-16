@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp
+﻿using System;
+
+namespace ConsoleApp
 {
     /// <summary>
     /// Этот класс включает в себя методы которые понадобятся для решения задач с семинаров
@@ -101,6 +103,132 @@
                 r += value[i] * Pow(15, count - 1 - i);
             }
             return r;
+        }
+
+        /// <summary>
+        /// Метод вывода массива чтобы числа выводились с пробелом
+        /// </summary>
+        /// <param name="array">Массив для вывода</param>
+        /// <returns></returns>
+        public static string PrintMass(int[] array)
+        {
+            string r = String.Empty;
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+            return r;
+        }
+
+        /// <summary>
+        /// Метод вывода массива сумм элементов, стоящих на нечётных позициях.
+        /// </summary>
+        /// <param name="array">Массив для расчёта</param>
+        /// <returns></returns>
+        public static int SumNonPositions(int[] array)
+        {
+            int v = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    v += array[i];
+                }
+            }
+            return v;
+        }
+
+        /// <summary>
+        /// Метод вывода поиска количества чётных чисел в массиве и подсчёт их колличества.
+        /// </summary>
+        /// <param name="array">Массив для расчёта</param>
+        /// <returns></returns>
+        public static int EvenNumbersInArray(int[] array)
+        {
+            int q = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if ((array[i] % 10) % 2 == 0)
+                {
+                    q++;
+                }
+                if (((array[i] / 10) % 10) % 2 == 0)
+                {
+                    q++;
+                }
+                if (((array[i] / 100) % 10) % 2 == 0)
+                {
+                    q++;
+                }
+            }
+            return q;
+        }
+
+        /// <summary>
+        /// Метод создания вещественного массива массива 
+        /// </summary>
+        /// <param name="count">Колличество элементов массива</param>
+        /// <returns></returns>
+        public static double[] DobleCrtArr(double count)
+        {
+            return new double[(int)count];
+        }
+
+        /// <summary>
+        /// Метод заполнения массива случайными вещественными числами 
+        /// </summary>
+        /// <param name="array">массив который надо заполнить</param>
+        /// <param name="min">минимальный элемент заполнения</param>
+        /// <param name="max">максимальный  элемент заполнения</param>
+        /// <returns></returns>
+        public static void DobleСomplArr(double[] array, int min, int max)
+        {
+            int size = array.Length;
+            Random rand = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = rand.Next(min, max) + rand.NextDouble();
+            }
+        }
+
+        /// <summary>
+        /// Метод округления вещественных чисел до N знаков после запятой
+        /// </summary>
+        /// <param name="array">массив в котором нужно произвести округление</param>
+        /// <param name="N">До какого числа после запятой происходит округление</param>
+        /// <returns></returns>
+        public static void RoundingDoble(double[] array, int N)
+        {
+            double F = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                F = Math.Round(array[i], N);
+                Console.Write($"{F} ");
+            }
+        }
+
+        /// <summary>
+        /// Метод поиска минимального и максимального значения в массиве вещественных чисел
+        /// </summary>
+        /// <param name="array">массив в котором нужно произвести поиск</param>
+        /// <returns></returns>
+        public static void DobleSearch(double[] array)
+        {
+            double min = 0;
+            double max = 0;
+            for (int z = 0; z < array.Length; z++)
+            {
+                if (array[z] > max)
+                {
+                    max = Math.Round(array[z], 2);
+                }
+                if (array[z] < min)
+                {
+                    min = Math.Round(array[z], 2);
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"MAX {max} | MIN {min}|");
         }
     }
 }
