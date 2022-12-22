@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp
 {
@@ -51,26 +52,6 @@ namespace ConsoleApp
             {
                 array[i] = new Random().Next(min, max);
             }
-        }
-
-        /// <summary>
-        /// Метод переводит масив в строку
-        /// </summary>
-        /// <param name="array">массив который необходимо вывести</param>
-        /// <returns></returns>
-        public static string ShowArrayToString(int[] array)
-        {
-            string result = String.Empty;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == 10) result += $"A";
-                else if (array[i] == 11) result += $"B";
-                else if (array[i] == 12) result += $"C";
-                else if (array[i] == 13) result += $"D";
-                else if (array[i] == 14) result += $"E";
-                else result += $"{array[i]}";
-            }
-            return result;
         }
 
         /// <summary>
@@ -229,6 +210,51 @@ namespace ConsoleApp
             }
             Console.WriteLine();
             Console.WriteLine($"MAX {max} | MIN {min}|");
+        }
+
+        /// <summary>
+        /// Метод ввода чисел в массив с клавы
+        /// </summary>
+        /// <param name="array">массив в который нужно записать</param>
+        /// <returns></returns>
+        public static void ManuallyNumbersArray(int[] array)
+        {
+            int size = array.Length;
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write($"Ввести число массива ");
+                int y = Convert.ToInt32(Console.ReadLine());
+                array[i] = y;
+            }
+        }
+
+        /// <summary>
+        /// Метод поиска количества элементов массива больше 0
+        /// </summary>
+        /// <param name="mass">массив в который нужно записать</param>
+        /// <returns></returns>
+        public static int SearchingNumberArray(int[] mass)
+        {
+            int q = 0;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if (mass[i] >= q)
+                {
+                    q++;
+                }
+            }
+            return q;
+        }
+
+        /// <summary>
+        /// Метод определения точки координат пересечения 2-х прямых 
+        /// </summary>
+        /// <returns></returns>
+        public static void DeterminingPointCoordinates(double z, double b, double c, double v)
+        {
+            double x = (-(c - v)) / (z - b);
+            double y = z * x + v;
+            Console.WriteLine($"Точка пересечения прямых ({x}; {y})");
         }
     }
 }
