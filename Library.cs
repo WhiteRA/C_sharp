@@ -256,5 +256,114 @@ namespace ConsoleApp
             double y = z * x + v;
             Console.WriteLine($"Точка пересечения прямых ({x}; {y})");
         }
+
+        /// <summary>
+        /// Метод создания двумерного массива содержащий значения INT
+        /// </summary>
+        /// <param name="x">Колличество строк массива</param>
+        /// <param name="y">Колличество столбцов массива</param>
+        /// <returns></returns>
+        public static int[,] CrtTwoDimArr(int x, int y)
+        {
+            return new int[x, y];
+        }
+
+
+        /// <summary>
+        /// Метод печати двумерного массива содержащий значения INT
+        /// </summary>
+        /// <param name="matrix">массив который надо распечатать</param>
+        /// <returns></returns>
+        public static void PrintTwoDimArr(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// Метод заполнения двумерного массива содержащий значения INT
+        /// </summary>
+        /// <param name="matrix">массив который надо заполнить</param>
+        /// <returns></returns>
+        public static void FillTwoDimArr(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = new Random().Next(1, 10);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Метод создания двумерного массива содержащий значения DOUBLE
+        /// </summary>
+        /// <param name="matrix">массив который надо заполнить</param>
+        /// <returns></returns>
+        public static void CrtTwoDimRealArr(double[,] matrix)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = Math.Round(rand.Next(-10, 10) + rand.NextDouble(), 2);
+                    Console.Write($" {matrix[i, j]}  ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// Метод поиска элемента по координатам содержащий значения INT
+        /// </summary>
+        /// <param name="matrix">массив который надо заполнить</param>
+        /// <param name="x">Колличество строк массива</param>
+        /// <param name="y">Колличество столбцов массива</param>
+        /// <returns></returns>
+        public static int SearchingElementCoordinates(int[,] matrix, int x, int y)
+        {
+            int l = 0;
+            if (x > 3)
+            {
+                Console.WriteLine($"Координаты числа выходят за пределы размера марицы");
+            }
+            else if (y > 4)
+            {
+                Console.WriteLine($"Координаты числа выходят за пределы размера марицы");
+            }
+            else
+            {
+                l = matrix[x, y];
+                Console.WriteLine($"Число c данными координатами - {l}");
+            }
+            return l;
+        }
+
+        /// <summary>
+        /// Метод поиска среднего арифметического в массиве содержащий значения DOUBLE
+        /// </summary>
+        /// <param name="matrix">массив который надо заполнить</param>
+        /// <returns></returns>
+        public static void ArithmeticMeanArray(int[,] matrix)
+        {
+            double s = 0;
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.WriteLine();
+                for (int i = 0; i < matrix.GetLength(0); i++)
+                {
+                    s += matrix[i, j];
+                }
+                Console.Write($"= {s / matrix.GetLength(0)}; ");
+            }
+        }
     }
 }
