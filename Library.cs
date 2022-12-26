@@ -365,5 +365,27 @@ namespace ConsoleApp
                 Console.Write($"= {s / matrix.GetLength(0)}; ");
             }
         }
+
+        /// <summary>
+        /// Метод сортировки пузярьком одномерного массива 
+        /// </summary>
+        /// <param name="mass">массив который надо отсортировать</param>
+        /// <returns>Возвращает отсортированный массив</returns>
+        public static int[] BubbleSorting(int[] mass)
+        {
+            for (int i = 0; i < mass.Length; i++)
+            {
+                for (int j = 0; j < mass.Length - 1; j++)
+                {
+                    if (mass[j] > mass[j + 1])
+                    {
+                        int t = mass[j + 1];
+                        mass[j + 1] = mass[j];
+                        mass[j] = t;
+                    }
+                }
+            }
+            return mass;
+        }
     }
 }

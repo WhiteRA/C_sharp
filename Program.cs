@@ -300,7 +300,7 @@ Console.Write("Введите b2: ");
 double b2 = Convert.ToDouble(Console.ReadLine());
 
 DeterminingPointCoordinates(k1, k2, b1, b2);
-*/
+
 
 //Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 double[,] a = new double[3, 4];
@@ -323,3 +323,11 @@ int[,] f = CrtTwoDimArr(3, 4);
 FillTwoDimArr(f);
 PrintTwoDimArr(f);
 ArithmeticMeanArray(f);
+*/
+
+//Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+int[,] a = CrtTwoDimArr(5, 5);
+FillTwoDimArr(a);
+PrintTwoDimArr(a);
+
+
