@@ -146,10 +146,10 @@ namespace ConsoleApp
         }
 
         /// <summary>
-        /// Метод создания вещественного массива массива 
+        /// Метод создания вещественного массива 
         /// </summary>
         /// <param name="count">Колличество элементов массива</param>
-        /// <returns>Возвращает </returns>
+        /// <returns>Возвращает вещественный массив</returns>
         public static double[] DobleCrtArr(double count)
         {
             return new double[(int)count];
@@ -232,7 +232,7 @@ namespace ConsoleApp
         /// Метод поиска количества элементов массива больше 0
         /// </summary>
         /// <param name="mass">массив в который нужно записать</param>
-        /// <returns></returns>
+        /// <returns>Возвращает количества элементов массива больше 0</returns>
         public static int SearchingNumberArray(int[] mass)
         {
             int q = 0;
@@ -262,7 +262,7 @@ namespace ConsoleApp
         /// </summary>
         /// <param name="x">Колличество строк массива</param>
         /// <param name="y">Колличество столбцов массива</param>
-        /// <returns></returns>
+        /// <returns>Возвращает пустой двумерный массив</returns>
         public static int[,] CrtTwoDimArr(int x, int y)
         {
             return new int[x, y];
@@ -327,7 +327,7 @@ namespace ConsoleApp
         /// <param name="matrix">массив который надо заполнить</param>
         /// <param name="x">Колличество строк массива</param>
         /// <param name="y">Колличество столбцов массива</param>
-        /// <returns></returns>
+        /// <returns>Возвращает элемент который находиться по заданным координатам в массиве</returns>
         public static int SearchingElementCoordinates(int[,] matrix, int x, int y)
         {
             int l = 0;
