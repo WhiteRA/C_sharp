@@ -326,20 +326,20 @@ ArithmeticMeanArray(f);
 */
 
 //Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-int[,] a = CrtTwoDimArr(5, 5);
-FillTwoDimArr(a);
-PrintTwoDimArr(a);
-for (int i = 0; i < a.GetLength(0); i++)
+int[,] mass = CrtTwoDimArr(5, 5);
+FillTwoDimArr(mass);
+PrintTwoDimArr(mass);
+for (int i = 0; i < mass.GetLength(0); i++)
 {
-    for (int j = 0; j < a.GetLength(1); j++)
+    for (int j = 0; j < mass.GetLength(1); j++)
     {
-        for (int k = 0; k < a.GetLength(1) - 1; k++)
+        for (int k = 0; k < mass.GetLength(1) - 1; k++)
         {
-            if (a[i, k] < a[i, k + 1])
+            if (mass[i, k] < mass[i, k + 1])
             {
-                int t = a[i, k + 1];
-                a[i, k + 1] = a[i, k];
-                a[i, k] = t;
+                int t = mass[i, k + 1];
+                mass[i, k + 1] = mass[i, k];
+                mass[i, k] = t;
             }
         }
     }
