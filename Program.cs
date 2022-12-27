@@ -329,5 +329,47 @@ ArithmeticMeanArray(f);
 int[,] a = CrtTwoDimArr(5, 5);
 FillTwoDimArr(a);
 PrintTwoDimArr(a);
+for (int i = 0; i < a.GetLength(0); i++)
+{
+    for (int j = 0; j < a.GetLength(1); j++)
+    {
+        for (int k = 0; k < a.GetLength(1) - 1; k++)
+        {
+            if (a[i, k] < a[i, k + 1])
+            {
+                int t = a[i, k + 1];
+                a[i, k + 1] = a[i, k];
+                a[i, k] = t;
+            }
+        }
+    }
+}
+Console.WriteLine();
+PrintTwoDimArr(a);
 
-
+//Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+int[,] a = CrtTwoDimArr(5, 4);
+FillTwoDimArr(a);
+PrintTwoDimArr(a);
+Console.WriteLine();
+int[] s = CrtArr(5);
+int p = 0;
+int r = int.MaxValue;
+int indexMin = 0;
+for (int i = 0; i < a.GetLength(0); i++)
+{
+    for (int j = 0; j < a.GetLength(1); j++)
+    {
+        p += a[i, j];
+    }
+    Console.Write($"{p} ");
+    if (p < r)
+    {
+        r = p;
+        indexMin = i + 1;
+    }
+    p = 0;
+}
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine(indexMin);
