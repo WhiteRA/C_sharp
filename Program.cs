@@ -382,10 +382,9 @@ Console.WriteLine($"Строка с минимальной суммой элем
 Console.WriteLine();
 */
 
+//Задача 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 int[,,] matrix = CrtThreeDimArr(2, 2, 2);
 FillThreeDimArr(matrix);
-
-
 for (int x = 0; x < matrix.GetLength(0); x++)
 {
     for (int y = 0; y < matrix.GetLength(1); y++)
