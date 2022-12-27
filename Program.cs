@@ -323,7 +323,7 @@ int[,] f = CrtTwoDimArr(3, 4);
 FillTwoDimArr(f);
 PrintTwoDimArr(f);
 ArithmeticMeanArray(f);
-*/
+
 
 //Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 int[,] mass = CrtTwoDimArr(RandomNumbers_1(), RandomNumbers_1());
@@ -352,7 +352,8 @@ for (int i = 0; i < mass.GetLength(0); i++) //Происходит движен�
 // - - после присваем значение переменной Т к 0ой ячейке.
 Console.WriteLine();
 PrintTwoDimArr(mass);
-/*
+Console.WriteLine();
+
 
 //Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 int[,] arr = CrtTwoDimArr(RandomNumbers_1(), RandomNumbers_1());
@@ -378,4 +379,21 @@ for (int i = 0; i < arr.GetLength(0); i++) // Цикл движения по с�
 }
 Console.WriteLine();
 Console.WriteLine($"Строка с минимальной суммой элементов - {indexMin}" );
+Console.WriteLine();
 */
+
+int[,,] matrix = CrtThreeDimArr(2, 2, 2);
+FillThreeDimArr(matrix);
+
+
+for (int x = 0; x < matrix.GetLength(0); x++)
+{
+    for (int y = 0; y < matrix.GetLength(1); y++)
+    {
+        for (int z = 0; z < matrix.GetLength(2); z++)
+        {
+            Console.Write($"{matrix[x, y, z]}({x},{y},{z}) ");
+        }
+    }
+    Console.WriteLine();
+}

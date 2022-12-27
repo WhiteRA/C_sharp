@@ -387,5 +387,55 @@ namespace ConsoleApp
             }
             return mass;
         }
+
+        /// <summary>
+        /// Метод создания трехмерно массива содержащий значения INT
+        /// </summary>
+        /// <param name="x">Колличество строк массива</param>
+        /// <param name="y">Колличество столбцов массива</param>
+        /// <returns>Возвращает пустой трехмерный массив</returns>
+        public static int[,,] CrtThreeDimArr(int x, int y, int z)
+        {
+            return new int[x, y, z];
+        }
+
+        /// <summary>
+        /// Метод заполнения трехмерно массива содержащий значения INT
+        /// </summary>
+        /// <param name="matrix">массив который надо заполнить</param>
+        /// <returns></returns>
+        public static void FillThreeDimArr(int[,,] matrix)
+        {
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    for (int z = 0; z < matrix.GetLength(2); z++)
+                    {
+                        matrix[x, y, z] = new Random().Next(10, 100);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Метод печати двумерного массива содержащий значения INT
+        /// </summary>
+        /// <param name="matrix">массив который надо распечатать</param>
+        /// <returns></returns>
+        public static void PrintThreeDimArr(int[,,] matrix)
+        {
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    for (int z = 0; z < matrix.GetLength(2); z++)
+                    {
+                        Console.Write($"{matrix[x, y, z]} ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
