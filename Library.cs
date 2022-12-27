@@ -21,7 +21,7 @@ namespace ConsoleApp
         /// <summary>
         /// Метод генерирует случайное число от 1 до 10 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Возврщает случайное число в диапазоне 1 - 10</returns>
         public static int RandomNumbers_1()
         {
             int RandomNumbers = new Random().Next(1, 10);
@@ -32,7 +32,7 @@ namespace ConsoleApp
         /// Метод создания массива 
         /// </summary>
         /// <param name="count">Колличество элементов массива</param>
-        /// <returns></returns>
+        /// <returns>Возвращает пустой массив</returns>
         public static int[] CrtArr(int count)
         {
             return new int[count];
@@ -59,7 +59,7 @@ namespace ConsoleApp
         /// </summary>
         /// <param name="a">Возводимое число</param>
         /// <param name="b">Степерь числа</param>
-        /// <returns></returns>
+        /// <returns>Число А возведённую в степерь В </returns>
         public static int Pow(int a, int b)
         {
             int s = 1;
@@ -90,7 +90,7 @@ namespace ConsoleApp
         /// Метод вывода массива чтобы числа выводились с пробелом
         /// </summary>
         /// <param name="array">Массив для вывода</param>
-        /// <returns></returns>
+        /// <returns>Возвращает числа из заданного массива и печатает их</returns>
         public static string PrintMass(int[] array)
         {
             string r = String.Empty;
@@ -102,10 +102,10 @@ namespace ConsoleApp
         }
 
         /// <summary>
-        /// Метод вывода массива сумм элементов, стоящих на нечётных позициях.
+        /// Метод вывода сумм элементов, стоящих на нечётных позициях.
         /// </summary>
         /// <param name="array">Массив для расчёта</param>
-        /// <returns></returns>
+        /// <returns>Возвращает число сумм элементов, стоящих на нечётных позициях</returns>
         public static int SumNonPositions(int[] array)
         {
             int v = 0;
@@ -123,7 +123,7 @@ namespace ConsoleApp
         /// Метод вывода поиска количества чётных чисел в массиве и подсчёт их колличества.
         /// </summary>
         /// <param name="array">Массив для расчёта</param>
-        /// <returns></returns>
+        /// <returns>Возвращает количества чётных чисел в массиве</returns>
         public static int EvenNumbersInArray(int[] array)
         {
             int q = 0;
@@ -149,7 +149,7 @@ namespace ConsoleApp
         /// Метод создания вещественного массива массива 
         /// </summary>
         /// <param name="count">Колличество элементов массива</param>
-        /// <returns></returns>
+        /// <returns>Возвращает </returns>
         public static double[] DobleCrtArr(double count)
         {
             return new double[(int)count];
