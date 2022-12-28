@@ -426,3 +426,14 @@ void GapNumberSum(int m, int n, int sum)
     GapNumberSum(m, n, sum);
 }
 GapNumberSum(m, n, sum);
+
+//Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+int i = 2;
+int j = 3;
+int functionAkkerman(int i, int j)
+{
+    if (i == 0) return n + 1;
+    else if (j == 0) return functionAkkerman(i - 1, 1);
+    else return functionAkkerman(i - 1, functionAkkerman(i, j - 1));
+}
+Console.WriteLine(functionAkkerman(i, j));
