@@ -409,3 +409,20 @@ void recursion(int number)
     recursion(number - 1);
 }
 recursion(5);
+
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+int m = 1;
+int n = 15;
+int sum = 0;
+
+void GapNumberSum(int m, int n, int sum)
+{
+    if (m > n)
+    {
+        return;
+    }
+    sum += (m++);
+    Console.WriteLine(sum);
+    GapNumberSum(m, n, sum);
+}
+GapNumberSum(m, n, sum);
