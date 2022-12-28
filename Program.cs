@@ -323,7 +323,7 @@ int[,] f = CrtTwoDimArr(3, 4);
 FillTwoDimArr(f);
 PrintTwoDimArr(f);
 ArithmeticMeanArray(f);
-*/
+
 
 //Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 int[,] mass = CrtTwoDimArr(RandomNumbers_1(), RandomNumbers_1());
@@ -396,3 +396,16 @@ for (int x = 0; x < matrix.GetLength(0); x++)
     }
     Console.WriteLine();
 }
+*/
+
+//Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+void recursion(int number)
+{
+    if (number == 0)
+    {
+        return;
+    };
+    Console.Write($"{number} ");
+    recursion(number - 1);
+}
+recursion(5);
