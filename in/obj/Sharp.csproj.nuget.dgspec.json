@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\parhomenko_av\\Dropbox\\prog\\Sharp\\Sharp.csproj": {}
+    "C:\\Users\\parhomenko_av\\Dropbox\\prog\\C_sharp\\in\\Sharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\parhomenko_av\\Dropbox\\prog\\Sharp\\Sharp.csproj": {
+    "C:\\Users\\parhomenko_av\\Dropbox\\prog\\C_sharp\\in\\Sharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\Sharp\\Sharp.csproj",
+        "projectUniqueName": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\C_sharp\\in\\Sharp.csproj",
         "projectName": "Sharp",
-        "projectPath": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\Sharp\\Sharp.csproj",
+        "projectPath": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\C_sharp\\in\\Sharp.csproj",
         "packagesPath": "C:\\Users\\parhomenko_av\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\Sharp\\obj\\",
+        "outputPath": "C:\\Users\\parhomenko_av\\Dropbox\\prog\\C_sharp\\in\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\parhomenko_av\\AppData\\Roaming\\NuGet\\NuGet.Config"
