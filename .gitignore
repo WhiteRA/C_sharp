@@ -228,4 +228,4 @@ AppPackages/
 *.config
 *.csproj
 *.sln
-Properties
+Properties/
