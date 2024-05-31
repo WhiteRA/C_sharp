@@ -18,6 +18,7 @@ namespace Client
 
             UdpClient client = new UdpClient();
             IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
+            
 
             try
             {
@@ -29,6 +30,10 @@ namespace Client
                     byte[] sendBytes = Encoding.UTF8.GetBytes(fullMessage);
 
                     client.Send(sendBytes, sendBytes.Length, serverEndPoint);
+
+                    byte[] recBytes = client.Receive(ref serverEndPoint);
+                    string receivedData = Encoding.UTF8.GetString(recBytes);
+                    Console.WriteLine("Получено: " + receivedData);
 
                     client.Client.ReceiveTimeout = 5000; // Таймаут ожидания 5 секунд
                     try
