@@ -27,7 +27,7 @@ namespace Server
                     string receivedData = Encoding.UTF8.GetString(receiveBytes);
                     Console.WriteLine("Получено: " + receivedData);
 
-                    ThreadPool.QueueUserWorkItem(obj => {
+                    Task.Run(() => {
                         string confirmationMessage = "Сообщение получено.";
                         byte[] confirmationBytes = Encoding.UTF8.GetBytes(confirmationMessage);
                         server.Send(confirmationBytes, confirmationBytes.Length, clientEndPoint);
