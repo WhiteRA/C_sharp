@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FileManager.Commands;
+using FileManager.Commands.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +13,18 @@ namespace FileManager
         private readonly IUserInterface _UserInterface;
 
         public DirectoryInfo CurrentDirectory { get; set; } = new("c:\\");
+
+        public IReadOnlyDictionary<string, FileManager> Commands { get; }
         public FileManager(IUserInterface UserInterface) 
-        { 
+        {
             _UserInterface = UserInterface;
+
+            Commands = new Dictionary<string, FileManagerComands>() 
+            {
+                {"1", new ListDriversCommand(UserInterface) },
+            };
+                    
+
         }
 
         public void Start()
