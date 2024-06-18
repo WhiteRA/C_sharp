@@ -9,6 +9,8 @@ namespace FileManager
     public class FileManager : IFileManager
     {
         private readonly IUserInterface _UserInterface;
+
+        public DirectoryInfo CurrentDirectory { get; set; } = new("c:\\");
         public FileManager(IUserInterface UserInterface) 
         { 
             _UserInterface = UserInterface;
