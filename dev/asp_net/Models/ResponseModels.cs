@@ -1,4 +1,4 @@
-﻿namespace asp_net
+﻿namespace asp_net.Models
 {
     public class GroupResponseModel
     {
