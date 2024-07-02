@@ -1,11 +1,13 @@
 ﻿using asp_net.Models;
 using asp_net.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
+using System.IO;
+using CsvHelper;
+using System.Formats.Asn1;
 
 namespace asp_net.Controllers
 {
-    
-
     [ApiController]
     [Route("api/[controller]")]
     public class StoreController : ControllerBase
@@ -17,43 +19,19 @@ namespace asp_net.Controllers
             _storeRepository = storeRepository;
         }
 
-        [HttpDelete("groups/{groupId}")]
-        public ActionResult<DeleteResponseModel> DeleteGroup(int groupId)
+        [HttpGet("products/csv")]
+        public IActionResult GetProductsCsv()
         {
-            var result = _storeRepository.DeleteGroup(groupId);
-            if (result)
+            var products = _storeRepository.GetAllProducts();
+            using var memoryStream = new MemoryStream();
+            using (var streamWriter = new StreamWriter(memoryStream))
+            using (var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture))
             {
-                return Ok(new DeleteResponseModel { Message = "Group deleted successfully." });
+                csvWriter.WriteRecords(products);
             }
-            return NotFound(new DeleteResponseModel { Message = "Group not found." });
-        }
 
-        [HttpDelete("products/{productId}")]
-        public ActionResult<DeleteResponseModel> DeleteProduct(int productId)
-        {
-            var result = _storeRepository.DeleteProduct(productId);
-            if (result)
-            {
-                return Ok(new DeleteResponseModel { Message = "Product deleted successfully." });
-            }
-            return NotFound(new DeleteResponseModel { Message = "Product not found." });
-        }
-
-        [HttpPut("products/{productId}/price")]
-        public ActionResult<ProductResponseModel> SetPrice(int productId, [FromBody] decimal newPrice)
-        {
-            var product = _storeRepository.SetPrice(productId, newPrice);
-            if (product != null)
-            {
-                return Ok(new ProductResponseModel
-                {
-                    ProductId = product.Id,
-                    ProductName = product.Name,
-                    Price = product.Price,
-                    Message = "Price updated successfully."
-                });
-            }
-            return NotFound(new ProductResponseModel { Message = "Product not found." });
+            memoryStream.Position = 0;
+            return File(memoryStream, "text/csv", "products.csv");
         }
     }
 
