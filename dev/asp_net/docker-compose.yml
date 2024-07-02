@@ -1,0 +1,32 @@
+﻿version: '3.8'
+
+services:
+  storeapp:
+    image: storeapp
+    build:
+      context: .
+      dockerfile: StoreApp/Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - warehouse
+      - apigateway
+
+  warehouse:
+    image: warehouse
+    build:
+      context: .
+      dockerfile: WarehouseService/Dockerfile
+    ports:
+      - "8001:80"
+
+  apigateway:
+    image: apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - "8002:80"
+    depends_on:
+      - storeapp
+      - warehouse

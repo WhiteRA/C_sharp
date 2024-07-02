@@ -2,14 +2,21 @@
 
 namespace WarehouseService.Models
 {
-    public class WarehouseItemType : ObjectGraphType<WarehouseItem>
+    public class WarehouseItem
     {
-        public WarehouseItemType()
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
+    }
+
+    public class WarehouseDbContext : DbContext
+    {
+        public WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) : base(options)
         {
-            Field(x => x.Id).Description("Item ID");
-            Field(x => x.Name).Description("Item name");
-            Field(x => x.Quantity).Description("Item quantity");
         }
+
+        public DbSet<WarehouseItem> WarehouseProducts { get; set; }
     }
 
 }
